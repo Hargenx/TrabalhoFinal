@@ -8,12 +8,10 @@ library(dplyr)
 library(ggplot2)
 library(triangle)
 
-# Definindo os novos dados fornecidos
-min_preco <- 255.00
-max_preco <- 1000.00
-mode_preco <- 488.00
+min_preco <- 186887.90
+max_preco <- 393745.98
+mode_preco <- 290000.00
 
-# Exibir os parâmetros
 cat("Min:", min_preco, "\nMax:", max_preco, "\nMode:", mode_preco, "\n")
 
 # Função para calcular o custo utilizando Monte Carlo
@@ -47,11 +45,19 @@ boxplot(custos_mc, main = "Boxplot dos Custos do Projeto (Monte Carlo)", ylab = 
 summary(custos_mc)
 
 # Definir um limite superior de custo
-limite_superior <- 350000
+limite_superior <- 150000000
 
 # Calcular a probabilidade de ultrapassar o limite superior
 probabilidade_ultrapassar <- mean(custos_mc > limite_superior)
 cat("Probabilidade de ultrapassar", limite_superior, ": ", probabilidade_ultrapassar * 100, "%\n")
+
+summary(custos_mc)
+hist(custos_mc, breaks = 50, main = "Distribuição dos Custos de Desenvolvimento", xlab = "Custo (R$)")
+abline(v = limite_superior, col = "red", lwd = 2, lty = 2)
+legend("topright", legend = paste("Limite Superior =", limite_superior), col = "red", lwd = 2, lty = 2)
+
+# Mostrar a probabilidade
+cat("A probabilidade de ultrapassar o limite superior de", limite_superior, "é de", probabilidade_ultrapassar * 100, "%\n")
 
 # Calcular o intervalo de confiança para os custos do projeto (95%)
 intervalo_confiança <- quantile(custos_mc, probs = c(0.025, 0.975))
