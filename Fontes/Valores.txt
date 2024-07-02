@@ -1,0 +1,80 @@
+Valores
+
+https://portaldatransparencia.gov.br/contratos/consulta?fornecedor=19005408&ordenarPor=dataFimVigencia&direcao=desc
+https://portaldatransparencia.gov.br/contratos/consulta?fornecedor=13603372&ordenarPor=dataFimVigencia&direcao=desc
+https://portaldatransparencia.gov.br/contratos/consulta?fornecedor=9705578&ordenarPor=dataFimVigencia&direcao=desc
+
+
+https://portaldatransparencia.gov.br/contratos/667087589?ordenarPor=descricao&direcao=asc
+SIGMA DATASERV INFORMATICA S A
+Número do Contrato 00004/2020
+Valor inicial do contrato R$ 3.230.000,00
+Valor final do contrato R$ 2.981.772,80
+Lista de itens contratados
+DESCRIÇÃO,QUANTIDADE CONTRATADA,VALOR UNITÁRIO (R$)
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS,4480,R$ 524,96
+SUSTENTAÇÃO DE SOFTWARE,1200,R$ 524,96
+DESENVOLVIMENTO DE NOVO SOFTWARE - R$ 2.660.000,00
+SUSTENTACAO DE SOFTWARE. PROC - R$ 570.000,00
+
+https://portaldatransparencia.gov.br/contratos/667200910?ordenarPor=descricao&direcao=asc
+SIGMA DATASERV INFORMATICA S A
+Número do Contrato 00061/2021
+Valor inicial do contrato R$ 3.705.000,00
+Valor final do contrato R$ 3.705.000,00
+DESCRIÇÃO,QUANTIDADE CONTRATADA,VALOR UNITÁRIO (R$)
+DESENVOLVIMENTO DE NOVO SOFTWARE - JAVA,6000,R$ 494,00
+MANUTENCAO DE SOFTWARE (CORRETIVA, PREVENTIVA, ADAPTATIVA),1500,R$ 494,00
+DESENVOLVIMENTO DE NOVO SOFTWARE - JAVA - R$ 2.964.000,00
+SERVIÇO DE MANUTENÇÃO DE SISTEMAS DE INFORMAÇÃO - R$ 741.000,00
+
+
+https://portaldatransparencia.gov.br/contratos/666964637?ordenarPor=descricao&direcao=asc
+SIGMA DATASERV INFORMATICA S A
+Número do Contrato 6/2016
+Valor inicial do contrato R$ 7.650.000,00
+Valor atualizado do contrato R$ 32.467.808,70
+DESCRIÇÃO,QUANTIDADE CONTRATADA,VALOR UNITÁRIO (R$)
+MANUTENCAO / INSTALACAO / DESENVOLVIMENTO SOFTWARE,7650,R$ 7.650.000,00
+
+https://portaldatransparencia.gov.br/contratos/667121627?ordenarPor=descricao&direcao=asc
+Número do Contrato 00006/2021
+Valor inicial do contrato R$ 12.164.000,00
+Valor final do contrato R$ 10.301.556,75
+SEM INFORMAÇÃO
+
+https://portaldatransparencia.gov.br/contratos/667185802?ordenarPor=descricao&direcao=asc
+BASIS TECNOLOGIA DA INFORMACAO S.A.
+Número do Contrato 00031/2023
+Valor inicial do contrato
+R$ 11.335.267,92
+Valor final do contrato
+R$ 11.335.267,92
+Lista de itens contratados
+DESCRIÇÃO,QUANTIDADE CONTRATADA,VALOR UNITÁRIO (R$)
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS - SÊNIOR,6,R$ 361.020,82
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS - PLENO,6,R$ 275.293,05
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS - SÊNIOR,9,R$ 251.849,63
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS - PLENO,9,R$ 186.887,90
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS - CIENTISTA DE DADOS,3,R$ 393.745,98
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS - ANALISTA DE REQUISITOS,6,R$ 230.015,39
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS - ANALISTA DE SEGURANÇA,3,R$ 335.805,55
+
+https://portaldatransparencia.gov.br/contratos/667097376?ordenarPor=descricao&direcao=asc
+BASIS TECNOLOGIA DA INFORMACAO S.A.
+Número do Contrato 00030/2020
+Valor inicial do contrato R$ 3.640.000,00
+Valor final do contrato R$ 4.193.585,76
+DESCRIÇÃO,QUANTIDADE CONTRATADA,VALOR UNITÁRIO (R$)
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS,3600,R$ 599,08
+SUSTENTACAO DE SOFTWARE,3400,R$ 599,08
+
+https://portaldatransparencia.gov.br/contratos/667090582?ordenarPor=descricao&direcao=asc
+SIGMA DATASERV INFORMATICA S A
+Número do Contrato 00035/2020
+Valor inicial do contrato R$ 19.830.000,00
+Valor final do contrato R$ 22.809.600,00
+DESCRIÇÃO,QUANTIDADE CONTRATADA,VALOR UNITÁRIO (R$)
+DESENVOLVIMENTO E/OU EVOLUCAO DE SOFTWATE - OUTRAS LINGUAGENS,5000,R$ 760,32
+MANUTENCAO EVOLUTIVA DE SOFTWARE (ACRESCIMO DE NOVAS FUNCIONALIDADES) - OUTRAS LINGUAGENS,20000,R$ 760,32
+MANUTENCAO DE SOFTWARE (CORRETIVA, PREVENTIVA, ADAPTATIVA),5000,R$ 760,32

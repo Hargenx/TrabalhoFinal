@@ -1,0 +1,56 @@
+ATA DE REGISTRO DE PREÇOS Nº 29/2024
+ESPECIFICAÇÃO,UNIDADE,QUANTIDADE(PARA 12 MESES),VALOR UNITÁRIO
+Desenvolvedor JAVA,Ponto de Função,16.429,R$565,15
+Desenvolvedor PHP,Ponto de Função,5.546,R$565,15
+Desenvolvedor Python,Ponto de Função,150,R$565,15
+Desenvolvedor Mobile,Ponto de Função,2.747,R$565,15
+Desenvolvedor Outras linguagens,Ponto de Função,58,R$565,15
+Desenvolvimento manutenção de sistema legado,Ponto de Função,1.796,R$565,15
+Desenvolvimento manutenção de sistema legado,Ponto de Função,4.930,R$680,00
+Desenvolvedor JAVA para correções e novos modulos,Ponto de Função,4.933,R$527,00
+Desenvolvedor PHP para correções e novos modulos,Ponto de Função,5.541,R$527,00
+Desenvolvedor Python para correções e novos modulos,Ponto de Função,343,R$527,00
+Desenvolvedor Mobile para correções e novos modulos,Ponto de Função,1.868,R$527,00
+Desenvolvedor Outras lingugens para correções e novos modulos,Ponto de Função,511,R$527,00
+
+ATA DE REGISTRO DE PREÇOS Nº 30/2024
+ESPECIFICAÇÃO,UNIDADE,QUANTIDADE(PARA 12 MESES),VALOR UNITÁRIO
+Desenvolvedor JAVA,Ponto de Função,5.204,R$600,00
+Desenvolvedor PHP,Ponto de Função,295,R$680,00
+Desenvolvedor Python,Ponto de Função,3.940,R$680,00
+Desenvolvedor Mobile,Ponto de Função,874,R$680,00
+Desenvolvedor Outras linguagens,Ponto de Função,2.542,R$680,00
+Desenvolvimento manutenção de sistema legado,Ponto de Função,4.930,R$680,00
+Desenvolvedor JAVA para correções e novos modulos,Ponto de Função,8.397,R$540,00
+Desenvolvedor PHP para correções e novos modulos,Ponto de Função,2.604,R$680,00
+Desenvolvedor Python para correções e novos modulos,Ponto de Função,901,R$680,00
+Desenvolvedor Mobile para correções e novos modulos,Ponto de Função,1.000,R$680,00
+Desenvolvedor Outras lingugens para correções e novos modulos,Ponto de Função,4.804,R$540,00
+
+ATA DE REGISTRO DE PREÇOS Nº 31/2024
+ESPECIFICAÇÃO,UNIDADE,QUANTIDADE(PARA 12 MESES),VALOR UNITÁRIO
+Desenvolvedor JAVA,Ponto de Função,7.357,R$550,00
+Desenvolvedor PHP,Ponto de Função,6.043,R$530,00
+Desenvolvedor Python,Ponto de Função,200,R$840,00
+Desenvolvedor Mobile,Ponto de Função,730,R$750,00
+Desenvolvedor Outras linguagens,Ponto de Função,184,R$800,00
+Desenvolvimento manutenção de sistema legado,Ponto de Função,1.644,R$720,00
+
+
+ATA DE REGISTRO DE PREÇOS Nº 32/2024
+ESPECIFICAÇÃO,UNIDADE,QUANTIDADE(PARA 12 MESES),VALOR UNITÁRIO
+Desenvolvedor JAVA,Ponto de Função,3.784,R$525,00
+Desenvolvedor PHP,Ponto de Função,2.833,R$430,00
+Desenvolvedor Python,Ponto de Função,2.894,R$525,00
+Desenvolvedor Mobile,Ponto de Função,2.353,R$886,51
+Desenvolvedor Outras linguagens,Ponto de Função,1.020,R$525,00
+Desenvolvimento manutenção de sistema legado,Ponto de Função,5.203,R$525,00
+
+ATA DE REGISTRO DE PREÇOS Nº 33/2024
+ESPECIFICAÇÃO,UNIDADE,QUANTIDADE(PARA 12 MESES),VALOR UNITÁRIO
+Desenvolvedor JAVA,Ponto de Função,5.984,R$886,51
+Desenvolvedor PHP,Ponto de Função,1.623,R$489,00
+Desenvolvedor Python,Ponto de Função,1.071,R$520,00
+Desenvolvedor Mobile,Ponto de Função,2.353,R$886,51
+Desenvolvedor Outras linguagens,Ponto de Função,3.708,R$836,00
+Desenvolvimento manutenção de sistema legado,Ponto de Função,4.014,R$791,00
