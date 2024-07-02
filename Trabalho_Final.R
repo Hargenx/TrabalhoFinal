@@ -14,7 +14,7 @@ mode_preco <- 290000.00
 
 cat("Min:", min_preco, "\nMax:", max_preco, "\nMode:", mode_preco, "\n")
 
-# Função para calcular o custo utilizando Monte Carlo
+# FunC'C#o para calcular o custo utilizando Monte Carlo
 calcular_custo_mc <- function(num_pontos_funcao, min_preco, mode_preco, max_preco, experiencia_equipe, complexidade_tecnica, n_simulacoes) {
     custos_simulacao <- numeric(n_simulacoes)
     for (i in 1:n_simulacoes) {
@@ -25,23 +25,23 @@ calcular_custo_mc <- function(num_pontos_funcao, min_preco, mode_preco, max_prec
     return(custos_simulacao)
 }
 
-# Definindo as variáveis para simulação
+# Definindo as variC!veis para simulaC'C#o
 num_pontos_funcao <- 500
-experiencia_equipe <- 1.1 # Exemplo de uma equipe com experiência moderada
-complexidade_tecnica <- 1.2 # Exemplo de alta complexidade técnica
-n_simulacoes <- 10000 # Número de simulações
+experiencia_equipe <- 1.1 # Exemplo de uma equipe com experiC*ncia moderada
+complexidade_tecnica <- 1.2 # Exemplo de alta complexidade tC)cnica
+n_simulacoes <- 10000 # NC:mero de simulaC'C5es
 
-# Simulação dos custos utilizando Monte Carlo
+# SimulaC'C#o dos custos utilizando Monte Carlo
 set.seed(123) # Para reprodutibilidade
 custos_mc <- calcular_custo_mc(num_pontos_funcao, min_preco, mode_preco, max_preco, experiencia_equipe, complexidade_tecnica, n_simulacoes)
 
-# Gráfico: Histograma dos custos
-hist(custos_mc, breaks = 50, main = "Distribuição dos Custos do Projeto (Monte Carlo)", xlab = "Custo Total (R$)", col = "blue", border = "black")
+# GrC!fico: Histograma dos custos
+hist(custos_mc, breaks = 50, main = "DistribuiC'C#o dos Custos do Projeto (Monte Carlo)", xlab = "Custo Total (R$)", col = "blue", border = "black")
 
-# Gráfico: Boxplot dos custos
+# GrC!fico: Boxplot dos custos
 boxplot(custos_mc, main = "Boxplot dos Custos do Projeto (Monte Carlo)", ylab = "Custo Total (R$)")
 
-# Estatísticas descritivas
+# EstatC-sticas descritivas
 summary(custos_mc)
 
 # Definir um limite superior de custo
@@ -52,44 +52,44 @@ probabilidade_ultrapassar <- mean(custos_mc > limite_superior)
 cat("Probabilidade de ultrapassar", limite_superior, ": ", probabilidade_ultrapassar * 100, "%\n")
 
 summary(custos_mc)
-hist(custos_mc, breaks = 50, main = "Distribuição dos Custos de Desenvolvimento", xlab = "Custo (R$)")
+hist(custos_mc, breaks = 50, main = "DistribuiC'C#o dos Custos de Desenvolvimento", xlab = "Custo (R$)")
 abline(v = limite_superior, col = "red", lwd = 2, lty = 2)
 legend("topright", legend = paste("Limite Superior =", limite_superior), col = "red", lwd = 2, lty = 2)
 
 # Mostrar a probabilidade
-cat("A probabilidade de ultrapassar o limite superior de", limite_superior, "é de", probabilidade_ultrapassar * 100, "%\n")
+cat("A probabilidade de ultrapassar o limite superior de", limite_superior, "C) de", probabilidade_ultrapassar * 100, "%\n")
 
-# Calcular o intervalo de confiança para os custos do projeto (95%)
-intervalo_confiança <- quantile(custos_mc, probs = c(0.025, 0.975))
-cat("Intervalo de confiança (95%):\n")
-print(intervalo_confiança)
+# Calcular o intervalo de confianC'a para os custos do projeto (95%)
+intervalo_confianCa <- quantile(custos_mc, probs = c(0.025, 0.975))
+cat("Intervalo de confianCa (95%):\n")
+print(intervalo_confianCa)
 
 
-# Sensibilidade para experiência da equipe
+# Sensibilidade para experiC*ncia da equipe
 experiencia_variacoes <- c(1.0, 1.1, 1.2, 1.3, 1.4)
 sensibilidade_experiencia <- sapply(experiencia_variacoes, function(exp) {
     calcular_custo_mc(num_pontos_funcao, min_preco, mode_preco, max_preco, exp, complexidade_tecnica, n_simulacoes)
 })
 mean_custos_experiencia <- colMeans(sensibilidade_experiencia)
-plot(experiencia_variacoes, mean_custos_experiencia, type = "b", xlab = "Experiência da Equipe", ylab = "Custo Médio (R$)", main = "Análise de Sensibilidade - Experiência da Equipe")
+plot(experiencia_variacoes, mean_custos_experiencia, type = "b", xlab = "ExperiC*ncia da Equipe", ylab = "Custo MC)dio (R$)", main = "AnC!lise de Sensibilidade - ExperiC*ncia da Equipe")
 
-# Sensibilidade para complexidade técnica
+# Sensibilidade para complexidade tC)cnica
 complexidade_variacoes <- c(1.0, 1.1, 1.2, 1.3, 1.4)
 sensibilidade_complexidade <- sapply(complexidade_variacoes, function(comp) {
     calcular_custo_mc(num_pontos_funcao, min_preco, mode_preco, max_preco, experiencia_equipe, comp, n_simulacoes)
 })
 mean_custos_complexidade <- colMeans(sensibilidade_complexidade)
-plot(complexidade_variacoes, mean_custos_complexidade, type = "b", xlab = "Complexidade Técnica", ylab = "Custo Médio (R$)", main = "Análise de Sensibilidade - Complexidade Técnica")
+plot(complexidade_variacoes, mean_custos_complexidade, type = "b", xlab = "Complexidade TC)cnica", ylab = "Custo MC)dio (R$)", main = "AnC!lise de Sensibilidade - Complexidade TC)cnica")
 
 
 dados_projetos <- data.frame(
     Especificacao = c(
         "Desenvolvedor JAVA", "Desenvolvedor PHP", "Desenvolvedor Python", "Desenvolvedor Mobile", "Desenvolvedor Outras linguagens",
-        "Desenvolvimento manutenção de sistema legado", "Desenvolvedor JAVA para correções e novos modulos",
-        "Desenvolvedor PHP para correções e novos modulos", "Desenvolvedor Python para correções e novos modulos",
-        "Desenvolvedor Mobile para correções e novos modulos", "Desenvolvedor Outras lingugens para correções e novos modulos"
+        "Desenvolvimento manutenC'C#o de sistema legado", "Desenvolvedor JAVA para correC'C5es e novos modulos",
+        "Desenvolvedor PHP para correC'C5es e novos modulos", "Desenvolvedor Python para correC'C5es e novos modulos",
+        "Desenvolvedor Mobile para correC'C5es e novos modulos", "Desenvolvedor Outras lingugens para correC'C5es e novos modulos"
     ),
-    Unidade = "Ponto de Função",
+    Unidade = "Ponto de FunCC#o",
     Quantidade = c(
         16429, 5546, 150, 2747, 58, 1796, 4933, 5541, 343, 1868, 511
     ),
@@ -123,7 +123,7 @@ estatisticas <- data.frame(
     Media = numeric(),
     Mediana = numeric(),
     Desvio_Padrao = numeric(),
-    Intervalo_Confiança = character(),
+    Intervalo_ConfianCa = character(),
     stringsAsFactors = FALSE
 )
 
@@ -139,7 +139,7 @@ for (tipo in names(resultados_simulacao)) {
         Media = media,
         Mediana = mediana,
         Desvio_Padrao = desvio_padrao,
-        Intervalo_Confiança = paste0("(", intervalo_confianca[1], ", ", intervalo_confianca[2], ")")
+        Intervalo_ConfianCa = paste0("(", intervalo_confianca[1], ", ", intervalo_confianca[2], ")")
     ))
 }
 
@@ -173,24 +173,24 @@ estimativas_custos <- data.frame(
     Especificacao = c(
         "Desenvolvedor JAVA", "Desenvolvedor PHP", "Desenvolvedor Python",
         "Desenvolvedor Mobile", "Desenvolvedor Outras linguagens",
-        "Desenvolvimento manutenção de sistema legado",
-        "Desenvolvedor JAVA para correções e novos modulos",
-        "Desenvolvedor PHP para correções e novos modulos",
-        "Desenvolvedor Python para correções e novos modulos",
-        "Desenvolvedor Mobile para correções e novos modulos",
-        "Desenvolvedor Outras lingugens para correções e novos modulos"
+        "Desenvolvimento manutenCC#o de sistema legado",
+        "Desenvolvedor JAVA para correCC5es e novos modulos",
+        "Desenvolvedor PHP para correCC5es e novos modulos",
+        "Desenvolvedor Python para correCC5es e novos modulos",
+        "Desenvolvedor Mobile para correCC5es e novos modulos",
+        "Desenvolvedor Outras lingugens para correCC5es e novos modulos"
     ),
     Custo_Minimo = c(430, 430, 430, 430, 430, 430, 430, 430, 430, 430, 430),
     Custo_Maximo = c(886.51, 886.51, 886.51, 886.51, 886.51, 886.51, 886.51, 886.51, 886.51, 886.51, 886.51),
     Custo_Modal = c(565.15, 565.15, 565.15, 565.15, 565.15, 565.15, 527, 527, 527, 527, 527)
 )
 
-# Função para simular os custos usando distribuição triangular
+# FunCC#o para simular os custos usando distribuiCC#o triangular
 simular_custos <- function(min, max, mode, n) {
     rtriangle(n, min, max, mode)
 }
 
-# Aplicar a simulação de Monte Carlo para cada tipo de desenvolvimento
+# Aplicar a simulaCC#o de Monte Carlo para cada tipo de desenvolvimento
 n_simulacoes <- 10000
 resultados_simulacao <- lapply(seq_len(nrow(estimativas_custos)), function(i) {
     simular_custos(
@@ -203,7 +203,7 @@ resultados_simulacao <- lapply(seq_len(nrow(estimativas_custos)), function(i) {
 
 names(resultados_simulacao) <- estimativas_custos$Especificacao
 
-par(mfrow = c(2, 2)) # Organizar gráficos em uma grade de 2x2
+par(mfrow = c(2, 2)) # Organizar grC!ficos em uma grade de 2x2
 
 for (tipo in names(resultados_simulacao)) {
     hist(resultados_simulacao[[tipo]], breaks = 50, main = paste("Custos -", tipo), xlab = "Custo Total (R$)", col = "blue", border = "black")
@@ -214,7 +214,7 @@ estatisticas <- data.frame(
     Media = numeric(),
     Mediana = numeric(),
     Desvio_Padrao = numeric(),
-    Intervalo_Confiança = character(),
+    Intervalo_ConfianCa = character(),
     stringsAsFactors = FALSE
 )
 
@@ -230,30 +230,30 @@ for (tipo in names(resultados_simulacao)) {
         Media = media,
         Mediana = mediana,
         Desvio_Padrao = desvio_padrao,
-        Intervalo_Confiança = paste0("(", intervalo_confianca[1], ", ", intervalo_confianca[2], ")")
+        Intervalo_ConfianC'a = paste0("(", intervalo_confianca[1], ", ", intervalo_confianca[2], ")")
     ))
 }
 
 print(estatisticas)
 
 
-# Dados das atas de registro de preços
+# Dados das atas de registro de preC'os
 atas <- data.frame(
     especificacao = c(
         "Desenvolvedor JAVA", "Desenvolvedor PHP", "Desenvolvedor Python", "Desenvolvedor Mobile",
-        "Desenvolvedor Outras linguagens", "Desenvolvimento manutenção de sistema legado",
-        "Desenvolvedor JAVA para correções e novos modulos", "Desenvolvedor PHP para correções e novos modulos",
-        "Desenvolvedor Python para correções e novos modulos", "Desenvolvedor Mobile para correções e novos modulos",
-        "Desenvolvedor Outras linguagens para correções e novos modulos",
+        "Desenvolvedor Outras linguagens", "Desenvolvimento manutenC'C#o de sistema legado",
+        "Desenvolvedor JAVA para correC'C5es e novos modulos", "Desenvolvedor PHP para correC'C5es e novos modulos",
+        "Desenvolvedor Python para correC'C5es e novos modulos", "Desenvolvedor Mobile para correC'C5es e novos modulos",
+        "Desenvolvedor Outras linguagens para correC'C5es e novos modulos",
         "Desenvolvedor JAVA", "Desenvolvedor PHP", "Desenvolvedor Python", "Desenvolvedor Mobile",
-        "Desenvolvedor Outras linguagens", "Desenvolvimento manutenção de sistema legado",
-        "Desenvolvedor JAVA para correções e novos modulos", "Desenvolvedor PHP para correções e novos modulos",
-        "Desenvolvedor Python para correções e novos modulos", "Desenvolvedor Mobile para correções e novos modulos",
-        "Desenvolvedor Outras linguagens para correções e novos modulos",
+        "Desenvolvedor Outras linguagens", "Desenvolvimento manutenC'C#o de sistema legado",
+        "Desenvolvedor JAVA para correC'C5es e novos modulos", "Desenvolvedor PHP para correC'C5es e novos modulos",
+        "Desenvolvedor Python para correC'C5es e novos modulos", "Desenvolvedor Mobile para correC'C5es e novos modulos",
+        "Desenvolvedor Outras linguagens para correC'C5es e novos modulos",
         "Desenvolvedor JAVA", "Desenvolvedor PHP", "Desenvolvedor Python", "Desenvolvedor Mobile",
-        "Desenvolvedor Outras linguagens", "Desenvolvimento manutenção de sistema legado"
+        "Desenvolvedor Outras linguagens", "Desenvolvimento manutenC'C#o de sistema legado"
     ),
-    unidade = "Ponto de Função",
+    unidade = "Ponto de FunC'C#o",
     quantidade = c(
         16429, 5546, 150, 2747, 58, 1796, 4933, 5541, 343, 1868, 511,
         5204, 295, 3940, 874, 2542, 4930, 8397, 2604, 901, 1000, 4804,
@@ -266,7 +266,7 @@ atas <- data.frame(
     )
 )
 
-# Parâmetros de simulação
+# ParC"metros de simulaC'C#o
 min_valor <- 430
 max_valor <- 886.51
 mode_valor <- 565.15
@@ -309,10 +309,10 @@ calcular_pontos_funcao <- function(tipo, complexidade) {
 complexidades <- data.frame(
     especificacao = c(
         "Desenvolvedor JAVA", "Desenvolvedor PHP", "Desenvolvedor Python", "Desenvolvedor Mobile",
-        "Desenvolvedor Outras linguagens", "Desenvolvimento manutenção de sistema legado",
-        "Desenvolvedor JAVA para correções e novos modulos", "Desenvolvedor PHP para correções e novos modulos",
-        "Desenvolvedor Python para correções e novos modulos", "Desenvolvedor Mobile para correções e novos modulos",
-        "Desenvolvedor Outras linguagens para correções e novos modulos"
+        "Desenvolvedor Outras linguagens", "Desenvolvimento manutenC'C#o de sistema legado",
+        "Desenvolvedor JAVA para correC'C5es e novos modulos", "Desenvolvedor PHP para correC'C5es e novos modulos",
+        "Desenvolvedor Python para correC'C5es e novos modulos", "Desenvolvedor Mobile para correC'C5es e novos modulos",
+        "Desenvolvedor Outras linguagens para correC'C5es e novos modulos"
     ),
     tipo_funcional = c(
         "ALI", "AIE", "EE", "CE", "SE", "ALI", "ALI", "AIE", "EE", "CE", "SE"
@@ -327,7 +327,7 @@ atas <- atas %>%
     rowwise() %>%
     mutate(pontos_funcao = calcular_pontos_funcao(tipo_funcional, complexidade) * quantidade)
 if (any(is.na(atas$pontos_funcao))) {
-    stop("Existem valores NaN nos pontos de função calculados.")
+    stop("Existem valores NaN nos pontos de funC'C#o calculados.")
 }
 
 print(head(atas$pontos_funcao))
@@ -339,7 +339,7 @@ custos_totais <- replicate(num_simulacoes, {
 
 custos_totais_validos <- custos_totais[!is.na(custos_totais)]
 
-hist(custos_totais_validos, breaks = 50, main = "Distribuição dos Custos Totais do Projeto (Monte Carlo)", xlab = "Custo Total (R$)")
+hist(custos_totais_validos, breaks = 50, main = "DistribuiC'C#o dos Custos Totais do Projeto (Monte Carlo)", xlab = "Custo Total (R$)")
 
 risco_custos <- quantile(custos_totais_validos, probs = c(0.05, 0.50, 0.95))
 print(risco_custos)
