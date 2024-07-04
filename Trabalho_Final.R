@@ -230,7 +230,7 @@ for (tipo in names(resultados_simulacao)) {
         Media = media,
         Mediana = mediana,
         Desvio_Padrao = desvio_padrao,
-        Intervalo_ConfianC'a = paste0("(", intervalo_confianca[1], ", ", intervalo_confianca[2], ")")
+        Intervalo_ConfianCa = paste0("(", intervalo_confianca[1], ", ", intervalo_confianca[2], ")")
     ))
 }
 
