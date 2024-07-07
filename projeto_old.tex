@@ -1,0 +1,178 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}  % Pacote para fórmulas matemáticas
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{caption}
+%\usepackage[latin1]{inputenc}  
+
+\sloppy
+
+\title{Análise da Distribuição de Probabilidade do Custo de Desenvolvimento pelo Governo\\ Cálculo de Contagem de Função e Seus Riscos}
+
+\author{Raphael M. S. Jesus\inst{1}}
+
+\address{Programa de Pós-Graduação em Informática\\ Universidade Federal do Rio de Janeiro (UFRJ)\\
+  Av. Athos da Silveira Ramos, 274 Prédio do CCMN - Cidade Universitária
+Ilha do Fundão \\ Rio de Janeiro, Brasil CEP:21941-916
+\nextinstitute
+   Instituto Tércio Pacitti de Aplicações e Pesquisas Computacionais\\
+  Universidade Federal do Rio de Janeiro (UFRJ)
+  \email{raphael.mauricio@gmail.com}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+  Este artigo visa analisar o uso de pontos de função em projetos do governo e estabelecer um cálculo padrão para o valor dos projetos. O foco principal é estabelecer um padrão para o cálculo mais próximo do que seria o ideal para um projeto com os pontos determinados. A análise inclui simulações de Monte Carlo e o uso de distribuições probabilísticas para estimar custos e riscos.
+\end{abstract}
+     
+\begin{resumo} 
+  Este artigo visa analisar o uso de pontos de função em projetos do governo e estabelecer um cálculo padrão para o valor dos projetos. O foco principal é estabelecer um padrão para o cálculo mais próximo do que seria o ideal para um projeto com os pontos determinados. A análise inclui simulações de Monte Carlo e o uso de distribuições probabilísticas para estimar custos e riscos.
+\end{resumo}
+
+\section{Introdução}
+
+O uso de pontos de função como uma métrica para estimar o tamanho e o esforço de desenvolvimento de software tem sido amplamente adotado tanto na indústria quanto no setor público. No contexto governamental, é crucial que as estimativas de custo sejam precisas e reflitam os riscos associados a variações nos preços e na complexidade técnica dos projetos. Este trabalho visa estabelecer um padrão para a estimativa de custos de desenvolvimento de software em projetos governamentais, utilizando simulações de Monte Carlo para analisar a distribuição de probabilidade dos custos. As fórmulas e métodos utilizados são baseados no \textit{Roteiro de Métricas de Software do SISP} v2.3 \cite{sisp}.
+
+\section{Metodologia}
+
+\subsection{Cálculo de Pontos de Função}
+
+Os Pontos de Função (PF) são uma métrica de tamanho funcional para sistemas de software. O cálculo é realizado através das seguintes etapas, conforme descrito no \textit{Roteiro de Métricas de Software do SISP} v2.3 \cite{sisp}:
+
+1. Identificação e classificação dos componentes do sistema (Entradas Externas, Saídas Externas, Consultas Externas, Arquivos Lógicos Internos e Arquivos de Interface Externa).
+
+2. Atribuição de pesos a cada componente com base na sua complexidade.
+
+3. Aplicação de um fator de ajuste que leva em consideração características gerais do sistema.
+
+As fórmulas para o cálculo dos Pontos de Função são:
+
+\begin{equation}
+PF = (ILF \times \text{peso}_\text{ILF}) + (EIF \times \text{peso}_\text{EIF}) + (EI \times \text{peso}_\text{EI}) + (EO \times \text{peso}_\text{EO}) + (EQ \times \text{peso}_\text{EQ})
+\end{equation}
+
+\begin{equation}
+PF_{\text{ajustado}} = PF \times (0.65 + 0.01 \times \sum_{i=1}^{14} F_i)
+\end{equation}
+
+Onde:
+\begin{itemize}
+    \item \textbf{ILF}: Arquivos Lógicos Internos
+    \item \textbf{EIF}: Arquivos de Interface Externa
+    \item \textbf{EI}: Entradas Externas
+    \item \textbf{EO}: Saídas Externas
+    \item \textbf{EQ}: Consultas Externas
+    \item \textbf{F$_i$}: Características gerais do sistema (0 a 5)
+    \item \textbf{peso$_x$}: Peso de cada componente com base na complexidade
+\end{itemize}
+
+\section{Algoritmo de Cálculo de Pontos de Função}
+
+O algoritmo a seguir calcula os Pontos de Função ajustados conforme as fórmulas definidas pelo \textit{Roteiro de Métricas de Software do SISP} v2.3.
+
+\begin{algorithm}[H]
+\caption{Calcular Pontos de Função Ajustados}
+\begin{algorithmic}[1]
+\Procedure{calcularPontosFuncao}{$ILF, EIF, EI, EO, EQ, pesos, ajusteComplexidade$}
+    \State $PF \gets (ILF \times pesos[ILF]) + (EIF \times pesos[EIF]) +$
+    \State \hspace{3.5em} $(EI \times pesos[EI]) + (EO \times pesos[EO]) + (EQ \times pesos[EQ])$
+    \State $PF\_ajustado \gets PF \times (0.65 + 0.01 \times ajusteComplexidade)$
+    \State Escrever("Pontos de Função ajustados: ", $PF\_ajustado$)
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Simulação de Monte Carlo}
+
+A simulação de Monte Carlo é uma técnica utilizada para entender o impacto do risco e da incerteza em modelos e previsões. No contexto deste trabalho, utilizamos a simulação de Monte Carlo para estimar os custos de desenvolvimento de software a partir de pontos de função, considerando variáveis como a experiência da equipe e a complexidade técnica.
+
+\begin{algorithm}[H]
+\caption{Calcular custo usando Monte Carlo}
+\begin{algorithmic}[1]
+\Procedure{calcular\_custo\_mc}{num\_pontos\_funcao, min\_preco, mode\_preco, max\_preco, experiencia\_equipe, complexidade\_tecnica, n\_simulacoes}
+    \State custos $\leftarrow$ vetor de tamanho $n\_simulacoes$
+    \For{$i = 1$ to $n\_simulacoes$}
+        \State preco $\leftarrow$ rtriangle(1, a = min\_preco, b = max\_preco, c = mode\_preco)
+        \State custo $\leftarrow$ preco $\times$ num\_pontos\_funcao $\times$ experiencia\_equipe $\times$ complexidade\_tecnica
+        \State custos[i] $\leftarrow$ custo
+    \EndFor
+    \State \Return custos
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Parâmetros Utilizados}
+
+Para as simulações, foram utilizados os seguintes parâmetros baseados na análise de contratos governamentais:
+
+\begin{itemize}
+    \item \textbf{Número de Pontos de Função:} 500
+    \item \textbf{Experiência da Equipe:} 1.1 (equivalente a uma equipe com experiência moderada)
+    \item \textbf{Complexidade Técnica:} 1.2 (alta complexidade técnica)
+    \item \textbf{Número de Simulações:} 10.000
+\end{itemize}
+
+Os valores para os preços mínimo, máximo e modal foram derivados de contratos reais, conforme tabela a seguir:
+
+\begin{table}[H]
+\centering
+\caption{Estimativas de Custos por Tipo de Desenvolvimento}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Especificação} & \textbf{Custo Mínimo (R\$)} & \textbf{Custo Máximo (R\$)} & \textbf{Custo Modal (R\$)} \\
+\hline
+Desenvolvedor JAVA & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor PHP & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor Python & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor Mobile & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor Outras Linguagens & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvimento Manutenção de Sistema Legado & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor JAVA para Correções e Novos Módulos & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor PHP para Correções e Novos Módulos & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor Python para Correções e Novos Módulos & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor Mobile para Correções e Novos Módulos & 186.887,90 & 393.745,98 & 290.000,00 \\
+Desenvolvedor Outras Linguagens para Correções e Novos Módulos & 186.887,90 & 393.745,98 & 290.000,00 \\
+\hline
+\end{tabular}
+}
+\label{tab:estimativas_custos}
+\end{table}
+
+\section{Resultados e Discussão}
+
+Os resultados da simulação de Monte Carlo fornecem uma distribuição de probabilidade dos custos de desenvolvimento, considerando os parâmetros definidos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{distribuicao_custos.png}
+\caption{Distribuição de Probabilidade dos Custos de Desenvolvimento}
+\label{fig:distribuicao_custos}
+\end{figure}
+
+\subsection{Análise de Riscos}
+
+Para avaliar o risco de ultrapassar um determinado limite de custo, definimos um limite superior e calculamos a probabilidade de ultrapassagem usando a simulação de Monte Carlo. Esta análise permite que gestores tomem decisões informadas sobre a alocação de recursos e o gerenciamento de riscos nos projetos de software.
+
+\section{Conclusão}
+
+A utilização de Pontos de Função, combinada com simulações de Monte Carlo, oferece uma metodologia robusta para estimar custos e avaliar riscos em projetos de software no setor governamental. A adoção de padrões para cálculo e análise de custos pode contribuir significativamente para a eficiência e transparência na gestão de projetos públicos.
+
+\section{Referências}
+
+\begin{thebibliography}{9}
+\bibitem{sisp}
+Roteiro de Métricas de Software do SISP • Versão 2.3. Disponível em: \Url{https://www.gov.br/governodigital/pt-br/estrategias-e-governanca-digital/sisp/documentos/arquivos}. Acesso em: [22/06/2024].
+\end{thebibliography}
+
+\end{document}
